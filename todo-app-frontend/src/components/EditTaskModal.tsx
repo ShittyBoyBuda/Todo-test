@@ -38,7 +38,7 @@ const EditTaskModal: React.FC<EditTaskModalProps> = ({ isOpen, onClose, task }) 
                     console.error("Токен отсутствует в localStorage");
                     return;
                 }
-                const response = await axios.get(`http://localhost:3000/user/subordinates/${userId}`, {
+                const response = await axios.get(`https://todo-test-pgnd.onrender.com/user/subordinates/${userId}`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },

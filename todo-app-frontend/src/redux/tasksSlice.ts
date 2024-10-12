@@ -36,7 +36,7 @@ const initialState: TaskState = {
 
 export const fetchTasks = createAsyncThunk('tasks/fetchTasks', async () => {
     const token = localStorage.getItem('token');
-    const response = await axios.get('http://localhost:3000/tasks', {
+    const response = await axios.get('https://todo-test-pgnd.onrender.com/tasks', {
         headers: {
             Authorization: `Bearer ${token}`
         }
@@ -46,7 +46,7 @@ export const fetchTasks = createAsyncThunk('tasks/fetchTasks', async () => {
 
 export const createTask = createAsyncThunk('task/createTask', async (taskData: any) => {
     const token = localStorage.getItem('token');
-    const response = await axios.post('http://localhost:3000/tasks', taskData, {
+    const response = await axios.post('https://todo-test-pgnd.onrender.com/tasks', taskData, {
         headers: {
             Authorization: `Bearer ${token}`
         }
@@ -56,7 +56,7 @@ export const createTask = createAsyncThunk('task/createTask', async (taskData: a
 
 export const updateTask = createAsyncThunk('tasks/updateTask', async (taskData: any) => {
     const token = localStorage.getItem('token');
-    const response = await axios.put(`http://localhost:3000/tasks/${taskData.id}`, taskData, {
+    const response = await axios.put(`https://todo-test-pgnd.onrender.com/tasks/${taskData.id}`, taskData, {
         headers: {
             Authorization: `Bearer ${token}`
         }
@@ -66,7 +66,7 @@ export const updateTask = createAsyncThunk('tasks/updateTask', async (taskData: 
 
 export const deleteTask = createAsyncThunk('tasks/deleteTask', async (taskId: number) => {
     const token = localStorage.getItem('token');
-    await axios.delete(`http://localhost:3000/tasks/${taskId}`, {
+    await axios.delete(`https://todo-test-pgnd.onrender.com/tasks/${taskId}`, {
         headers: {
             Authorization: `Bearer ${token}`
         }

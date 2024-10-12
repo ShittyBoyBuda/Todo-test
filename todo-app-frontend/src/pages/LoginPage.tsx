@@ -19,7 +19,7 @@ const LoginPage: React.FC = () => {
 
     const onSubmit = async (data: LoginFromInputs) => {
         try {
-            const response = await axios.post('http://localhost:3000/auth/login', data);
+            const response = await axios.post('https://todo-test-pgnd.onrender.com/auth/login', data);
             localStorage.setItem('token', response.data.access_token);
 
             const userId = response.data.user.id;

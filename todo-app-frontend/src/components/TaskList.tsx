@@ -36,7 +36,7 @@ const TaskList: React.FC = () => {
                     console.log('Токен отсутствует');
                     return;
                 }
-                const response = await axios.get(`http://localhost:3000/user/subordinates/${userId}`, {
+                const response = await axios.get(`https://todo-test-pgnd.onrender.com/user/subordinates/${userId}`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },

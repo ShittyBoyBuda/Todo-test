@@ -27,7 +27,7 @@ const RegisterPage: React.FC = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/user');
+                const response = await axios.get('https://todo-test-pgnd.onrender.com/user');
                 setUsers(response.data);
             } catch (error) {
                 console.log(error);
@@ -38,7 +38,7 @@ const RegisterPage: React.FC = () => {
 
     const onSubmit = async (data: RegisterFormInputs) => {
         try {
-            await axios.post('http://localhost:3000/auth/register', data);
+            await axios.post('https://todo-test-pgnd.onrender.com/auth/register', data);
             navigate('/login');
         } catch (error) {
             console.error(error);
